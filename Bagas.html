@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Surprise</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Space+Grotesk:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. INTRO PRANK SECTION -->
+    <div id="prank-screen" class="screen active">
+        <div class="terminal-box">
+            <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="terminal-title">ADA AKTIVITAS MENCURIGAKAN.</span>
+            </div>
+            <div class="terminal-body">
+                <div class="warning-icon">⚠️</div>
+                <h2>PERINGATAN KEAMANAN!</h2>
+                <p>Ada suatu masalah,diharuskan untuk melakukan pengecekan</p>
+                <p class="blink-text">> Pencet dibawah ini ya...</p>
+                <button id="fix-btn" class="prank-btn">CEK SEKARANG!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. QUESTION SECTION (YES / NO GAME) -->
+    <div id="question-screen" class="screen">
+        <div class="interactive-card">
+            <div class="emoji-header">🎁</div>
+            <h2>PRANKKKK! Btw, mau buka kadonnya sekarang ga?</h2>
+            <div class="btn-wrapper">
+                <button id="btn-yes" class="action-btn yes">MAU BANGET!</button>
+                <button id="btn-no" class="action-btn no">Gak Mau</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. LOADING SECTION -->
+    <div id="loading-screen" class="screen">
+        <div class="loading-box">
+            <div class="spinner"></div>
+            <h2 id="loading-percent">0%</h2>
+            <p id="loading-status">Menyiapkan kejutan...</p>
+            <div class="progress-bar-bg">
+                <div id="progress-bar" class="progress-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. BIRTHDAY SURPRISE & PHOTO SECTION -->
+    <div id="birthday-screen" class="screen">
+        <canvas id="confetti-canvas"></canvas>
+        <div class="surprise-card">
+            <span class="badge">Special Day</span>
+            <h1 class="glow-text">HAPPY BIRTHDAY!</h1>
+            <h3 id="target-name">My Teman🎉</h3>
+            <div class="divider"></div>
+            <p class="birthday-msg" id="typed-text"></p>
+            
+            <!-- BAGIAN AMBIL FOTO DIRECT KAMERA & SHARE NATIVE -->
+            <div id="photo-section" class="photo-section hidden">
+                <div class="divider"></div>
+                <h4>📸 Abadikan Momen Ini!</h4>
+                <p class="sub-photo-text">Ambil foto,SEMYUM DULUUU!</p>
+                
+                <input type="file" id="cameraInput" accept="image/*" capture="user" style="display: none;">
+                
+                <button id="takePhotoBtn" class="take-photo-btn">
+                    📸 Ambil Foto
+                </button>
+                
+                <div id="previewContainer" class="preview-container hidden">
+                    <img id="photoPreview" src="" alt="Foto Kamu">
+                    <div class="action-buttons-group">
+                        <button id="reTakePhotoBtn" class="sec-btn">🔄 Foto Lagi</button>
+                        <button id="shareBtn" class="share-btn">🚀 Kirim Foto</button>
+                    </div>
+                </div>
+
+                <!-- TOMBOL NEXT SETELAH FOTO / DARI FOTO -->
+                <div id="nextSection" class="next-section hidden">
+                    <button id="gotoFireworksBtn" class="next-btn">
+                        Mau lanjut lagi Ke Kejutan Akhir? ➔
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. FINAL FIREWORKS & THANK YOU SCREEN -->
+    <div id="final-screen" class="screen">
+        <canvas id="fireworks-canvas"></canvas>
+        <div class="final-content">
+            <h1 class="thank-you-title">Terima Kasih ❤️</h1>
+            <p class="thank-you-sub">Terima kasih sudah sampai sini. Semoga harimu selalu dipenuhi kebaikan & kebahagiaan,jangan lupa untuk kirim fotonya ya:)!</p>
+            <button id="backToPhotoBtn" class="btn-outline">
+                📷 Kembali ke Kamera
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
